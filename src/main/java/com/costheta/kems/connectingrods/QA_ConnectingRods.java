@@ -44,9 +44,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Optional;
 
-public class ConnectingRods extends Application implements MachiningNode, BasePaneConstants {
+public class QA_ConnectingRods extends Application implements MachiningNode, BasePaneConstants {
 
-    private static final Logger logger = LogManager.getLogger(ConnectingRods.class);
+    private static final Logger logger = LogManager.getLogger(QA_ConnectingRods.class);
     private static String name = "ConnectingRods";
     private static Font boldFont = VERDANA_BOLD_15;
 
@@ -106,13 +106,13 @@ public class ConnectingRods extends Application implements MachiningNode, BasePa
         try {
             BufferedImage greenTick = ImageIO.read(new File("Green Tick.jpg"));
             // System.out.println(gT);
-            ConnectingRods.greenTick = SwingFXUtils.toFXImage(greenTick,null);
+            QA_ConnectingRods.greenTick = SwingFXUtils.toFXImage(greenTick,null);
             BufferedImage redCross = ImageIO.read(new File("Red Cross.jpg"));
             // System.out.println(rC);
-            ConnectingRods.redCross = SwingFXUtils.toFXImage(redCross,null);
+            QA_ConnectingRods.redCross = SwingFXUtils.toFXImage(redCross,null);
             BufferedImage questionMark = ImageIO.read(new File("Question Mark.jpg"));
             // System.out.println(rC);
-            ConnectingRods.questionMark = SwingFXUtils.toFXImage(questionMark,null);
+            QA_ConnectingRods.questionMark = SwingFXUtils.toFXImage(questionMark,null);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -531,7 +531,7 @@ public class ConnectingRods extends Application implements MachiningNode, BasePa
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
             @Override
             public void handle(WindowEvent e) {
-                int response = ConnectingRods.this.closeWindowEvent(primaryStage);
+                int response = QA_ConnectingRods.this.closeWindowEvent(primaryStage);
                 if (response == 1) {
                     logger.trace("Closing down the application and shutting down remote cameras");
                     Tab selectedTab = overallTabPane.getSelectionModel().getSelectedItem();
