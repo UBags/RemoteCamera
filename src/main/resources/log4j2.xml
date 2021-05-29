@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="TRACE">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%c{2} %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <!--
+        <Routing name="remoteCameraAppender">
+            <Routes pattern="$${main:0}">
+                <Route key="$${main:0}">
+                    <File
+                            fileName="costheta-default.log"
+                            name="remoteCameraAppender-default" append="false">
+                        <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{1} (%F:%L) - %m%n"/>
+                    </File>
+                </Route>
+                <Route>
+                    <File
+                            fileName="costheta-${main:0}.log"
+                            name="remoteCameraAppender-${main:0}" append="false">
+                        <PatternLayout pattern="%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{1} (%F:%L) - %m%n"/>
+                    </File>
+                </Route>
+            </Routes>
+        </Routing>
+        -->
+        <File name="RemoteCameraLog" fileName="costheta.log" append="false">
+            <PatternLayout>
+                <Pattern>%-5p | %d{yyyy-MM-dd HH:mm:ss} | [%t] %C{1} (%F:%L) - %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <!--
+        <Logger name="com.foo.Bar" level="trace">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        Levels are : trace, debug, info, warn, error, fatal
+        -->
+        <Root level="trace">
+            <!--
+            <AppenderRef ref="Console"/>
+            -->
+            <AppenderRef ref="RemoteCameraLog"/>
+        </Root>
+    </Loggers>
+</Configuration>
