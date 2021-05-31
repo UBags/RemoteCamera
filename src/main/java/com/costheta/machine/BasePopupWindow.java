@@ -1,7 +1,6 @@
 package com.costheta.machine;
 
 import com.costheta.image.BasePaneConstants;
-import com.costheta.kems.connectingrods.ConnectingRods;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.stage.Stage;
